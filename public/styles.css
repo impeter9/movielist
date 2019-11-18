@@ -1,0 +1,25 @@
+body {
+    background-color: powderblue;
+    text-align: center;
+}
+
+h1 {
+    color: blue;
+}
+
+.movie-list-entry {
+    text-transform: capitalize;
+    border-style: solid;
+    border-width: 1px;
+    padding: 5px 20px;
+    margin: 0px 30%;
+    padding: 20px;
+}
+
+.search-bar {
+    margin-bottom: 15px;
+}
+
+.add-bar {
+    margin-bottom: 15px;
+}
