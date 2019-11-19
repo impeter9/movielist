@@ -8,8 +8,8 @@ class Search extends React.Component {
     render() {
         return (
             <form className="search-bar" onSubmit={this.props.handleSearchChange}>
-                <input type="text"/>
-                <input type="submit" value="Search"/>
+                <input type="text" placeholder="Search.."/>
+                <input type="submit" value="Go!"/>
             </form>
         );
     }

@@ -1,10 +1,11 @@
 body {
-    background-color: powderblue;
+    background-color: darkgray;
     text-align: center;
 }
 
 h1 {
-    color: blue;
+    color: black;
+    font-family: Marker Felt, fantasy;
 }
 
 .movie-list-entry {
@@ -14,6 +15,7 @@ h1 {
     padding: 5px 20px;
     margin: 0px 30%;
     padding: 20px;
+    text-align: left;
 }
 
 .search-bar {
@@ -22,4 +24,17 @@ h1 {
 
 .add-bar {
     margin-bottom: 15px;
+}
+
+#default_statement {
+    text-align: center;
+}
+
+.button {
+    /* background-color: lightgreen; */
+    /* margin-bottom: 1px; */
+}
+
+.watchbutton {
+    float: right;
 }

@@ -8,7 +8,7 @@ class Add extends React.Component {
     render() {
         return (
             <form className="add-bar" onSubmit={this.props.handleAddMovie}>
-                <input type="text"/>
+                <input type="text" placeholder="Add movie title here"/>
                 <input type="submit" value="Add"/>
             </form>
         );
