@@ -17,6 +17,7 @@ class App extends React.Component {
             //     {title: 'Ex Machina'},
             //   ],
             movies: [],
+            originalList: [],
             searchBool: false,
             watchedButton: false,
             toWatchButton: false
@@ -33,7 +34,6 @@ class App extends React.Component {
         }
         if (!sameTitle) {
             let newMovies = [{title: e.target[0].value.toLowerCase(), watched: false}];
-            // console.log(newMovies)
             this.setState({
                 movies: this.state.movies.concat(newMovies)
             })
@@ -64,13 +64,64 @@ class App extends React.Component {
         })
     }
 
+    handleWatchedButton(e) {
+        e.preventDefault();
+        console.log(this.state.watchedButton);
+        if (!this.state.watchedButton) {
+            var newWatchedMovieList = this.state.movies.filter(movie => {
+                return movie.watched
+            });
+            var originalList = this.state.movies.slice();
+            var watchedButton = this.state.watchedButton;
+            this.setState({
+                originalList: originalList,
+                movies: newWatchedMovieList,
+                watchedButton: !watchedButton
+            })
+        } else if (this.state.watchedButton) {
+            var movies = this.state.originalList.slice();
+            var originalList = [];
+            var watchedButton = this.state.watchedButton;
+            this.setState({
+                originalList: originalList,
+                movies: movies,
+                watchedButton: !watchedButton
+            })
+        }
+    }
+
+    handleToWatchButton(e) {
+        e.preventDefault();
+        if (!this.state.toWatchButton) {
+            var newToWatchMovieList = this.state.movies.filter(movie => {
+                return !movie.watched
+            });
+            var originalList = this.state.movies.slice();
+            var toWatchButton = this.state.toWatchButton;
+            this.setState({
+                originalList: originalList,
+                movies: newToWatchMovieList,
+                toWatchButton: !toWatchButton
+            })
+        } else if (this.state.toWatchButton) {
+            var movies = this.state.originalList.slice();
+            var originalList = [];
+            var toWatchButton = this.state.toWatchButton;
+            this.setState({
+                originalList: originalList,
+                movies: movies,
+                toWatchButton: !toWatchButton
+            })
+        }
+    }
+
     render() {
         return (
             <div>
                 <Header />
                 <Add handleAddMovie={this.handleAddMovie.bind(this)}/>
                 <Search handleSearchChange={this.handleSearchChange.bind(this)}/>
-                <Watch />
+                <Watch handleWatchedButton={this.handleWatchedButton.bind(this)} handleToWatchButton={this.handleToWatchButton.bind(this)} allState={this.state}/>
                 <MovieList handleWatchState={this.handleWatchState.bind(this)} allState={this.state}/>
             </div>
         );

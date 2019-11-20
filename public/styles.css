@@ -1,6 +1,7 @@
 body {
     background-color: darkgray;
     text-align: center;
+    font-family: Marker Felt, fantasy;
 }
 
 h1 {
@@ -30,10 +31,13 @@ h1 {
     text-align: center;
 }
 
-.button {
-    /* background-color: lightgreen; */
-    /* margin-bottom: 1px; */
+/* #buttonWatched {
+    background-color: lightgreen;
 }
+
+#buttonToWatch {
+    background-color: lightgreen;
+} */
 
 .watchbutton {
     float: right;
