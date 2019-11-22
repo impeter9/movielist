@@ -5,7 +5,10 @@ const MovieList = (props) => {
     if (props.allState.movies.length === 0){
         if (props.allState.searchBool){
             return (
-                <div id="default_statement" className="movie-list-entry">No movie by that name found</div>
+                <div>
+                    <div id="default_statement" className="movie-list-entry">No movie by that name found</div>
+                    <button onClick={props.handleBackToOriginalList}>Go to original list</button>
+                </div>
             );
         } else {
             return null;
